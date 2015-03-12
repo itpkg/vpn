@@ -1,5 +1,7 @@
 module Vpn
   class ApplicationController < ActionController::Base
+    layout 'layouts/application'
+
     before_action :_set_locale
     def _set_locale
       I18n.locale = params[:locale] || I18n.default_locale

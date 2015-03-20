@@ -1,7 +1,14 @@
 Vpn::Engine.routes.draw do
-  #get 'home'=>'home#index'
-  root 'home#index'
 
-  resources :users
-  resources :hosts
+  scope '/:locale' do
+    resources :users do
+      get 'logs'
+    end
+
+    resources :hosts do
+      get 'logs'
+    end
+  end
+
+  root 'home#index'
 end

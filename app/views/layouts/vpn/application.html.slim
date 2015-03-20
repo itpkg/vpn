@@ -1,0 +1,21 @@
+doctype html
+html(lang="#{I18n.locale}" ng-app="VpnApp")
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title #{t('vpn.titles.home')}
+    = stylesheet_link_tag 'vpn/application', media: 'all'
+    = csrf_meta_tags
+  body
+    = render 'layouts/vpn/header'
+    div class="container-fluid"
+      div class="row"
+        div class="col-lg-offset-1 col-lg-10"
+          div(class="row" ng-view)
+            = yield
+          = render "layouts/footer"
+    /[if lt IE 9]
+      = javascript_include_tag 'html5shiv/dist/html5shiv.min'
+      = javascript_include_tag 'respond/dest/respond.min'
+    = javascript_include_tag 'vpn/application'

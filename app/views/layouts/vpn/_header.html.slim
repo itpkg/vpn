@@ -1,0 +1,18 @@
+nav class="navbar navbar-inverse navbar-fixed-top"
+  div class="container-fluid"
+    div class="navbar-header"
+      button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+        span class="sr-only" Toggle navigation
+        span class="icon-bar"
+        span class="icon-bar"
+        span class="icon-bar"
+      a class="navbar-brand" href="#{vpn.root_path}" #{t('vpn.titles.home')}
+    div id="nav_bar" class="navbar-collapse collapse"
+      ul class="nav navbar-nav navbar-right"
+        li
+          - if user_signed_in?
+            = link_to t('devise.shared.links.sign_out'), main_app.destroy_user_session_path, method: 'delete', data: {confirm: t('labels.are_you_sure')}
+          - else
+            = link_to t('devise.shared.links.sign_in'), main_app.new_user_session_url
+      form class="navbar-form navbar-right"
+        input type="text" class="form-control" placeholder="Search..."

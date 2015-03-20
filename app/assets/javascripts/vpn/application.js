@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery/dist/jquery
+//= require jquery-ujs/src/rails
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require angular/angular
 //= require angular-route/angular-route

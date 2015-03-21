@@ -12,17 +12,4 @@
  *
  *= require_self
  */
-$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
-@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
-@import "bootstrap-sass/assets/stylesheets/bootstrap";
 
-/**
-*= require rails_bootstrap_forms
-*/
-body {
-  padding-top: 50px;
-}
-
-label.required:after {
-  content: " *";
-}

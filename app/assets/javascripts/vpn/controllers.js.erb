@@ -51,10 +51,10 @@ angular.module('VpnServices', [])
         .factory('vpnFactory', ['$http', function ($http) {
             var vpnFactory = {};
             vpnFactory.hosts = function () {
-                return $http.get("<%= url_helpers.hosts_path(locale: lang) %>");
+                return $http.get(set_lang("<%= url_helpers.hosts_path(locale: lang) %>"));
             };
             vpnFactory.users = function () {
-                return $http.get("<%= url_helpers.users_path(locale: lang) %>");
+                return $http.get(set_lang("<%= url_helpers.users_path(locale: lang) %>"));
             };
             return vpnFactory;
         }]);

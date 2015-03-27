@@ -7,6 +7,6 @@ Vpn::Engine.routes.draw do
     get 'logs'
   end
 
-  %w(sitemap rss).each { |a| get a => "home##{a}", constraints: {format: 'xml'} }
+  get 'sitemap' => 'home#sitemap', constraints: {format: 'xml'}
   root 'home#index'
 end
